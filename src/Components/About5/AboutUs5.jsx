@@ -1,6 +1,6 @@
 
-
 import React from 'react';
+import whyus1 from '../../assets//whyUs1.jpg';
 import whyus1png from '../../assets/whyus1svg.png';
 import whyus2 from '../../assets/whyus2.png';
 import whyus3 from '../../assets/whyus3.png';
@@ -21,7 +21,7 @@ const AboutUs5 = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl">
         
         {/* Card 1 */}
-        <div className="bg-[#F3E2C88F] rounded-2xl shadow-lg overflow-hidden p-8 text-left transition transform hover:scale-105">
+        <div className="bg-[#F3E2C88F] rounded-2xl overflow-hidden p-8 text-left transition transform hover:scale-105">
           <img src={whyus1png} alt="Legal Support" className="w-20 mb-4 h-[150px] w-[300px]" />
           <h2 className="text-3xl text-[#2e4a7d] mb-4 font-['Georgia'] italic">
             Top-Tier Legal Support
@@ -32,7 +32,7 @@ const AboutUs5 = () => {
         </div>
 
         {/* Card 2 */}
-        <div className="bg-[#F3E2C88F] rounded-2xl shadow-lg overflow-hidden p-8 text-left transition transform hover:scale-105">
+        <div className="bg-[#F3E2C88F] rounded-2xl overflow-hidden p-8 text-left transition transform hover:scale-105">
           <img src={whyus2} alt="No Upfront Costs" className="w-20 mb-4 h-[150px] w-[300px]" />
           <h2 className="text-3xl text-[#2e4a7d] mb-4 font-['Georgia'] italic">
             No Upfront Costs
@@ -43,7 +43,7 @@ const AboutUs5 = () => {
         </div>
 
         {/* Card 3 */}
-        <div className="bg-[#F3E2C88F] rounded-2xl shadow-lg overflow-hidden p-8 text-left transition transform hover:scale-105">
+        <div className="bg-[#F3E2C88F] rounded-2xl overflow-hidden p-8 text-left transition transform hover:scale-105">
           <img src={whyus3} alt="Comprehensive Resources" className="w-20 mb-4 h-[150px] w-[300px]" />
           <h2 className="text-3xl text-[#2e4a7d] mb-4 font-['Georgia'] italic">
             Comprehensive Resources

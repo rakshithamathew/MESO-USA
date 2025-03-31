@@ -28,7 +28,7 @@ function MesothThree() {
                 </div>
 
                 <div className="w-[1280px] h-96 left-[80px] mt-64 absolute bg-white rounded-[20px] overflow-hidden" >
-                    <div className="left-[40px] top-[80px] absolute justify-start text-blue-900 text-6xl font-bold font-serif">Important:</div>
+                    <div className="left-[40px] top-[80px] absolute justify-start text-blue-900 text-6xl italic font-bold font-serif">Important:</div>
                     <div className="w-[1025px] left-[40px] top-[193px] absolute justify-start text-blue-900 text-3xl font-normal font-['Helvetica']">If you have been exposed to asbestos or experience any of these symptoms, please consult a medical professional immediately for proper diagnosis and treatment.</div>
                 </div>
                 <div className="w-[1377px] h-72 left-[80px] mt-[50%] absolute rounded-[20px] outline outline-[5px] outline-offset-[-5px] outline-amber-100 overflow-hidden">

@@ -6,6 +6,8 @@ import Header from "../../Header/Header";
 import Navbar from "../../NavBar/Navbar";
 import MesoFAQ from "../Mesoth-faq/MesoFAQ";
 import Footer from "../../Footer/Footer"
+import MesothFourth from '../Mesoth-Fourth/MesothFour';
+import MesothFive from '../Mesoth-Five/MesothFive';
 
 
 function MesothMainPage() {
@@ -15,6 +17,9 @@ function MesothMainPage() {
       <Navbar />
       <MesthOne />
       <MesothTwo />
+      <MesothFive />
+
+      <MesothFourth />
       <MesothThree />
      <MesoFAQ />
      <Footer />

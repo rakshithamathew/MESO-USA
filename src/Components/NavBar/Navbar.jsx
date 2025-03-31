@@ -3,7 +3,9 @@ import phoneVector1 from '../../assets/phone-vector-1.svg';
 import phoneVector2 from '../../assets/phone-vector-2.svg';
 import phoneVector3 from '../../assets/phone-vector-3.svg';
 import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex items-center justify-between p-[20px] px-[50px] bg-[#FAF3EC] w-full">
       <div className="flex flex-row items-center justify-between">
@@ -61,7 +63,10 @@ const Navbar = () => {
             <p className="font-helvetica font-bold text-[24px] text-[#4B2C5E] m-0">2625151485</p>
           </div>
         </div>
-        <div className="bg-[#4B2C5E] rounded-[60px] p-[10px] px-[20px] cursor-pointer ml-[25px]">
+        <div
+          className="bg-[#4B2C5E] rounded-[60px] p-[10px] px-[20px] cursor-pointer ml-[25px]"
+          onClick={() => navigate('/ClaimForm')}
+        >
           <span className="font-helvetica font-bold text-[20px] text-[#F5E7DA]">Claim Form</span>
         </div>
       </div>
