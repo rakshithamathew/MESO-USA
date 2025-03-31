@@ -63,6 +63,7 @@ const MesothFive = () => {
                             </li>
                         </ul>
                     </div>
+
                 </div>
                 <img style={{ position: "absolute", top: "0px", left: "50px", width: "0px", height: "726px", objectFit: "contain", }} alt="" src="Line 14.svg" />
             </div>

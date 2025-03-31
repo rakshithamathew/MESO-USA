@@ -2,9 +2,9 @@ import React from 'react'
 
 function MesothThree() {
     return (
-        <div style={{ backgroundColor: "#F8F2E9", minHeight: "150vh" }} className="w-full">
+        <div style={{ backgroundColor: "#FAF3EC", minHeight: "150vh" }} className="w-full mt-[-2%]">
             <hr class="w-[845px] h-[1px] bg-[rgba(75,44,94,0.55)] ml-64"></hr>
-            <p class="text-[#4B2C5E] text-center font-georgia italic text-[64px] font-normal leading-normal underline decoration-solid decoration-custom-purple decoration-[3%] underline-offset-[14%] underline-from-font [text-decoration-skip-ink:none] [font-feature-settings:'dlig'on]">
+            <p class="text-[#4B2C5E] text-center font-georgia italic text-[64px] font-normal leading-normal underline decoration-solid decoration-[rgba(75,44,94,0.55)] decoration-[3%] underline-offset-[14%] underline-from-font [text-decoration-skip-ink:none] [font-feature-settings:'dlig'on] decoration-opacity-70">
                 Common Causes
             </p>
             <div className="flex justify-center w-full">

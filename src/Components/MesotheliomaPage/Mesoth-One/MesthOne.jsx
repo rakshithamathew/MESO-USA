@@ -23,7 +23,7 @@ function MesthOne() {
                                 <div className="absolute z-10 flex items-center justify-center">
                                     <p className="text-[#4B2C5E] font-helvetica text-[18px] font-medium leading-snug w-[700px] mt-[13%] ml-10"
                                         style={{ fontFeatureSettings: "'dlig' on", fontStyle: 'normal' }}>
-                                        Mesothelioma is a rare but aggressive form of cancer linked to prolonged exposure to asbestos, a toxic mineral once widely used in construction and manufacturing. Often diagnosed decades after initial exposure, mesothelioma is a rare cancer that affects the protective linings of the lungs, abdomen, or heart.
+                                        Mesothelioma is a <b>rare but aggressive form of cancer</b> linked to prolonged exposure to asbestos, a toxic mineral once widely used in construction and manufacturing. Often diagnosed decades after initial exposure, mesothelioma is a rare cancer that affects the <b>protective linings of the lungs, abdomen, or heart.</b>
                                     </p>
                                 </div>
                             </div>

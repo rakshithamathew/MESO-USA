@@ -6,8 +6,8 @@ import BackgroundImg from '../../assets/aboutusImg4.svg';
 const AboutUsPage = () => {
     return (
         <div className="w-full relative bg-[#faf3ec] h-screen overflow-hidden text-left text-[20px] text-[#4b2c5e] font-georgia">
-            <div className="relative top-[300px] -left-[23px] border-[5px] border-[#f3e2c8] box-border w-[101vw] h-[368px] overflow-hidden font-helvetica">
-                <div className="absolute top-[40px] left-1/2 translate-x-[9px] inline-block w-[498px] left-[850px]">
+            <div className="relative top-[300px] -left-[23px] border-[5px] border-[#f3e2c8] box-border w-[101vw] h-[400px] overflow-hidden font-helvetica">
+                <div className="absolute top-[40px] left-1/2 translate-x-[9px] inline-block w-[600px] left-[850px]">
                     <p className="m-0">
                         <span className="font-helvetica">{`Our aim is to provide `}</span>
                         <b>expert legal guidance, advocate for victims' rights,</b>

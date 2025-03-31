@@ -8,6 +8,7 @@ import MesoFAQ from "../Mesoth-faq/MesoFAQ";
 import Footer from "../../Footer/Footer"
 import MesothFourth from '../Mesoth-Fourth/MesothFour';
 import MesothFive from '../Mesoth-Five/MesothFive';
+import HomeEight from '../../Home-Eight/HomeEight';
 
 
 function MesothMainPage() {
@@ -22,6 +23,7 @@ function MesothMainPage() {
       <MesothFourth />
       <MesothThree />
      <MesoFAQ />
+     <HomeEight />
      <Footer />
     </div>
   )

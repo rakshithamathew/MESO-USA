@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import "./MesothTwo.css";
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -9,6 +9,33 @@ import image4 from "../../../assets/Frame 76 (5).png";
 import image5 from "../../../assets/Frame 76 (6).png";
 
 function MesothTwo() {
+    const carouselRef = useRef(null);
+    
+    useEffect(() => {
+        const handleScroll = (e) => {
+            if (carouselRef.current) {
+                e.preventDefault();
+                const carousel = carouselRef.current;
+                if (e.deltaY > 0) {
+                    carousel.onClickNext();
+                } else if (e.deltaY < 0) {
+                    carousel.onClickPrev();
+                }
+            }
+        };
+
+        const carouselElement = document.querySelector('.custom-carousel');
+        if (carouselElement) {
+            carouselElement.addEventListener('wheel', handleScroll, { passive: false });
+        }
+
+        return () => {
+            if (carouselElement) {
+                carouselElement.removeEventListener('wheel', handleScroll);
+            }
+        };
+    }, []);
+
     return (
         <div className="max-w-6xl mx-auto p-6">
             <h1 className="w-[739px] h-[109px] flex-shrink-0 text-[#2E4A7D] text-center font-[Georgia] text-[96px] italic font-normal leading-normal mx-auto">
@@ -23,46 +50,20 @@ function MesothTwo() {
             
             <div className="relative">
                 <Carousel
-                    showArrows={true}
+                    ref={carouselRef}
+                    showArrows={false}
                     showStatus={false}
                     showThumbs={false}
-                    infiniteLoop={false}  // Changed to false to prevent looping
+                    infiniteLoop={false}
                     centerMode={true}
                     centerSlidePercentage={33.33}
                     emulateTouch={true}
                     swipeable={true}
+                    showIndicators={false}
                     dynamicHeight={false}
                     className="custom-carousel gap-10"
-                    renderArrowPrev={(onClickHandler, hasPrev, label) =>
-                        hasPrev && (
-                            <button
-                                type="button"
-                                onClick={onClickHandler}
-                                title={label}
-                                className="absolute left-0 z-10 p-2 bg-white rounded-full shadow-md hover:bg-gray-100 focus:outline-none"
-                                style={{ top: '50%', transform: 'translateY(-50%)' }}
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                                </svg>
-                            </button>
-                        )
-                    }
-                    renderArrowNext={(onClickHandler, hasNext, label) =>
-                        hasNext && (
-                            <button
-                                type="button"
-                                onClick={onClickHandler}
-                                title={label}
-                                className="absolute right-0 z-10 p-2 bg-white rounded-full shadow-md hover:bg-gray-100 focus:outline-none"
-                                style={{ top: '50%', transform: 'translateY(-50%)' }}
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
-                        )
-                    }
+                    swipeScrollTolerance={50}
+                    preventMovementUntilSwipeScrollTolerance={true}
                 >
                     {/* Card 1 - Construction Workers */}
                     <div className="flex-shrink-0 w-[390px] h-[500px] rounded-[20px] flex flex-col items-center p-4 mx-2">

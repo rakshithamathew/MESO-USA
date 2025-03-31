@@ -5,6 +5,7 @@ import linkedin from '../../assets/linkedin.svg';
 import instagram from '../../assets/insta.svg';
 import emailImg from '../../assets/email.svg';
 import Logo from '../../assets/logo.svg';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
     const [email, setEmail] = useState('');
@@ -55,10 +56,36 @@ const Footer = () => {
 
                         {/* Navigation Links */}
                         <div className="flex flex-col space-y-3 md:text-left relative right-[135px]">
-                            <a href="/" className="text-[#4B2C5E] text-[32px] font-['Helvetica'] cursor-pointer no-underline">Home</a>
-                            <a href="/mesothelioma" className="text-[#4B2C5E] text-[32px] font-['Helvetica'] cursor-pointer no-underline">Mesothelioma</a>
-                            <a href="/about" className="text-[#4B2C5E] text-[32px] font-['Helvetica'] cursor-pointer no-underline">About us</a>
-                        </div>
+                        <NavLink
+            to="/"
+            style={{ textDecoration: 'none' }}
+            className={({ isActive }) =>
+              `font-helvetica font-normal text-[24px] cursor-pointer ${isActive ? 'text-[#2E4A7D]' : 'text-[#4B2C5E]'
+              }`
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/MesothMainPage"
+            style={{ textDecoration: 'none' }}
+            className={({ isActive }) =>
+              `font-helvetica font-normal text-[24px] cursor-pointer ${isActive ? 'text-[#2E4A7D]' : 'text-[#4B2C5E]'
+              }`
+            }
+          >
+            Mesothelioma
+          </NavLink>
+          <NavLink
+            to="/AboutMain"
+            style={{ textDecoration: 'none' }}
+            className={({ isActive }) =>
+              `font-helvetica font-normal text-[24px] cursor-pointer ${isActive ? 'text-[#2E4A7D]' : 'text-[#4B2C5E]'
+              }`
+            }
+          >
+            About us
+          </NavLink> </div>
 
                         {/* Newsletter */}
                         <div className="flex flex-col space-y-4">

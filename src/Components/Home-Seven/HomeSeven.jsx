@@ -19,14 +19,14 @@ const HomeSeven = () => {
             expanded: false
         },
         {
-            id: 2,
+            id: 3,
             question: 'What if my asbestos exposure happened decades ago?',
             answer: 'Since mesothelioma has a long latency period (20-50 years), you can still file a claim even if the exposure occurred decades ago. Courts recognize this delay, and the timeline usually starts from the date of diagnosis, not exposure.',
             category: 'law',
             expanded: false
         },
         {
-            id: 3,
+            id: 2,
             question: 'How long do I have to file a claim after my diagnosis?',
             answer: 'The time limit to file a claim varies by state and is determined by the statute of limitations—typically 1 to 5 years from the date of diagnosis. It’s crucial to consult a lawyer quickly to ensure you meet the deadline.',
             category: 'law',
@@ -40,14 +40,14 @@ const HomeSeven = () => {
             expanded: false
         },
         {
-            id: 5,
+            id: 6,
             question: 'What if my asbestos exposure happened decades ago?',
             answer: 'Most mesothelioma cases develop 20-50 years after asbestos exposure. The law recognizes this long latency period, and the statute of limitations typically begins when you are diagnosed, not when exposure occurred.',
             category: 'law',
             expanded: false
         },
         {
-            id: 6,
+            id: 5,
             question: 'Is my family eligible to file a lawsuit on my behalf?',
             answer: 'Yes, if you cannot file a lawsuit due to illness, a spouse, child, or legal representative can file on your behalf. If a loved one has passed away due to mesothelioma, family members may also file a wrongful death claim to seek compensation.',
             category: 'law',

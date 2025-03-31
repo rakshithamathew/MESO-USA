@@ -8,6 +8,8 @@ import HomeSix from "./Components/Home-six/HomeSix";
 import Hometwo from "./Components/Home-two/Hometwo";
 import MesothMainPage from "./Components/MesotheliomaPage/MesothMainPage/MesothMainPage";
 import AboutMain from "./Components/AboutMain"
+import HomeEight from "./Components/Home-Eight/HomeEight"
+import ClaimForm from "./Components/ClaimForm/ClaimForm"
 import "leaflet/dist/leaflet.css";
 
 import React from "react";
@@ -34,9 +36,14 @@ function App() {
       element: <HomeSix />,
     },
     {
+      path: '/HomeEight',
+      element: <HomeEight />,
+    },
+    {
       path: '/Hometwo',
       element: <Hometwo />,
     },
+    
     {
       path: '/MesothMainPage',
       element: <MesothMainPage />,
@@ -44,6 +51,10 @@ function App() {
     {
       path: '/AboutMain',
       element: <AboutMain />,
+    },
+    {
+      path: '/ClaimForm',
+      element: <ClaimForm />,
     },
 
     {
