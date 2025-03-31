@@ -22,7 +22,7 @@ function MesoMain() {
             <HomeThree />
             <HomeFour />
             <HomeFive />
-            <HomeSix />b
+            <HomeSix />
             <HomeSeven />
             <CLAIMFORMPage2 />
             <Footer />
