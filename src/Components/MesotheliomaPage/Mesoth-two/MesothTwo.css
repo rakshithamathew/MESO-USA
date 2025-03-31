@@ -1,0 +1,30 @@
+.custom-carousel {
+  padding: 20px 0;
+}
+
+.carousel-card {
+  width: 390px;
+  height: 500px;
+  margin: 0 10px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Adjust carousel slide spacing */
+.carousel .slide {
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* Center slides */
+.carousel .slider-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* Remove default carousel list styles */
+.carousel .slider {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
