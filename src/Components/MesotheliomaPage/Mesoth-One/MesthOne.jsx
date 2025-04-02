@@ -23,7 +23,7 @@ function MesthOne() {
                             </h1>
 
                             <div className="flex relative mt-4 w-full sm:w-[100%] md:w-[80%] lg:w-[800px]">
-                                <div className="w-full relative rounded-[20px] bg-white h-[336px] overflow-hidden text-left text-[20px] sm:text-[16px] lg:text-[40px] text-[#4b2c5e] font-helvetica">
+                                <div className="w-full relative rounded-[20px] bg-white h-[356px] overflow-hidden text-left text-[20px] sm:text-[16px] lg:text-[40px] text-[#4b2c5e] font-helvetica">
                                     <i className="absolute top-[30px] left-[50%] transform -translate-x-[50%] underline font-georgia text-left w-[90%]">
                                         Get the Facts You Need
                                     </i>
@@ -41,8 +41,21 @@ function MesthOne() {
                                     {/* <div className="absolute top-[calc(50%+59px)] left-[50%] transform -translate-x-[50%] rounded-[20px] bg-[#2e4a7d] flex flex-row items-center justify-center py-[24px] px-[40px] text-[16px] sm:text-[14px] lg:text-[24px] text-[#f5e7da]">
                                         <b className="relative">Get a Free Case Evaluation</b>
                                     </div> */}
-                                    <div className="absolute top-[256px] sm:top-[calc(50%+59px)] left-[50%] transform -translate-x-[50%] rounded-[20px] bg-[#2e4a7d] flex flex-row items-center justify-center py-[24px] px-[40px] text-[16px] sm:text-[14px] lg:text-[24px] text-[#f5e7da] left-[30%]">
-                                        <button 
+                                    <div className="md:block hidden absolute top-[300px] sm:top-[calc(50%+59px)] left-[30%] transform -translate-x-[50%] rounded-[20px] bg-[#2e4a7d] flex flex-row items-center justify-center w-[300px] text-[16px] p-2 sm:text-[14px] lg:text-[24px] text-[#f5e7da] left-[30%] sm:w-[50%]">
+
+
+                                        <button
+                                            className="w-full h-full relative focus:outline-none"
+                                            onClick={() => window.location.href = '/contact'}
+                                        >
+                                            <b className="relative">Get a Free Case Evaluation</b>
+                                        </button>
+                                    </div>
+
+                                    <div className="block md:hidden absolute top-[300px] sm:top-[calc(50%+59px)] left-[50%] transform -translate-x-[50%] rounded-[20px] bg-[#2e4a7d] flex flex-row items-center justify-center w-[300px] text-[16px] p-2 sm:text-[14px] lg:text-[24px] text-[#f5e7da] left-[30%] sm:w-[90%]">
+
+
+                                        <button
                                             className="w-full h-full relative focus:outline-none"
                                             onClick={() => window.location.href = '/contact'}
                                         >

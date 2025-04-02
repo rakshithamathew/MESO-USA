@@ -6,9 +6,57 @@ import image4 from "../../assets/Frame 42.png";
 import image5 from "../../assets/Frame 42 (1).png";
 import image6 from "../../assets/Frame 42 (2).png";
 import image7 from "../../assets/Frame 41.png";
+import image8 from "../../assets/Frame 9.png";
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Helmet } from 'react-helmet';
+
+// Custom CSS for carousel
+const carouselStyles = {
+    carousel: {
+        width: '100%',
+        minHeight: '300px'
+    },
+    slide: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '250px',
+        margin: '0 5px'
+    },
+    image: {
+        maxWidth: '100%',
+        height: 'auto',
+        objectFit: 'cover',
+        borderRadius: '20px'
+    }
+};
+
+// Add a style tag to override the CSS rule that hides the carousel
+const overrideCarouselCSS = `
+    .custom-carousel, 
+    .custom-carousel.custom-carousel,
+    .custom-carousel .custom-carousel,
+    div.custom-carousel,
+    .carousel-root .carousel.carousel-slider {
+        padding: 20px 0;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .carousel .slide {
+        display: block !important;
+        visibility: visible !important;
+    }
+    
+    .carousel .slide img {
+        display: block !important;
+        max-height: 300px;
+        width: auto;
+        margin: 0 auto;
+    }
+`;
 
 function HomeFive() {
     const carouselRef = useRef(null);
@@ -40,6 +88,10 @@ function HomeFive() {
 
     return (
         <div className="font-halvett font-bold">
+            <Helmet>
+                <style>{overrideCarouselCSS}</style>
+            </Helmet>
+            
             {/* Desktop Version */}
             <div className="hidden md:flex flex-col gap-3 p-[5%] bg-[#F5E7DA80]">
                 {/* First Row */}
@@ -83,14 +135,10 @@ function HomeFive() {
                 {/* Second Row */}
                 <div className="flex justify-between mt-[1%] gap-0">
                     <div>
-                        <Helmet>
-                            <img src={image3} alt="" className="h-[50px] w-[150px] object-contain absolute z-10 mt-[8%] ml-[63%]" />
-                        </Helmet>
+                        <img src={image3} alt="" className="h-[50px] w-[150px] object-contain absolute z-10 mt-[8%] ml-[63%]" />
                     </div>
                     <div className="overflow-hidden flex items-center justify-center gap-0">
-                        <Helmet>
-                            <img src={image2} alt="" className="max-h-full max-w-full object-contain" />
-                        </Helmet>
+                        <img src={image2} alt="" className="max-h-full max-w-full object-contain" />
                     </div>
                 </div>
             </div>
@@ -138,72 +186,75 @@ function HomeFive() {
                 </div>
 
                 {/* Image Section */}
-                <div className="relative mt-4">
+<div className="relative mt-4 w-full">
+    <div className="relative w-full">
+        <Carousel
+            ref={carouselRef}
+            showArrows={true}
+            showStatus={false}
+            showThumbs={false}
+            infiniteLoop={true}
+            centerMode={true}
+            centerSlidePercentage={100} // Changed to 100% to take full width
+            emulateTouch={true}
+            swipeable={true}
+            showIndicators={false}
+            dynamicHeight={true}
+            className="w-full"
+            swipeScrollTolerance={50}
+            preventMovementUntilSwipeScrollTolerance={true}
+            renderThumbs={() => []}
+        >
+            {/* Card 1 - Construction Workers */}
+            <div className="w-full">
+                <img
+                    src={image4}
+                    alt="Construction Workers"
+                    className="w-full h-auto object-contain max-h-[80vh]"
+                />
+            </div>
 
-                    <div className="relative">
-                        <Carousel
-                            ref={carouselRef}
-                            showArrows={false}
-                            showStatus={false}
-                            showThumbs={false}
-                            infiniteLoop={false}
-                            centerMode={true}
-                            centerSlidePercentage={95}
-                            emulateTouch={true}
-                            swipeable={true}
-                            showIndicators={false}
-                            dynamicHeight={false}
-                            className="custom-carousel gap-10"
-                            swipeScrollTolerance={50}
-                            preventMovementUntilSwipeScrollTolerance={true}
-                        >
-                            {/* Card 1 - Construction Workers */}
-                            <div className="rounded-[20px] flex flex-col items-center ">
-                                <Helmet>
-                                    <img
-                                        src={image4}
-                                        alt="Construction Workers"
-                                        className="rounded-[20px] object-cover"
-                                    />
-                                </Helmet>
-                            </div>
+            {/* Card 2 - Shipyard Workers */}
+            <div className="w-full">
+                <img
+                    src={image5}
+                    alt="Shipyard Workers"
+                    className="w-full h-auto object-contain max-h-[80vh]"
+                />
+            </div>
 
-                            {/* Card 2 - Shipyard Workers */}
-                            <div className="rounded-[20px] flex flex-col items-center">
-                                <Helmet>
-                                    <img
-                                        src={image5}
-                                        alt="Shipyard Workers"
-                                        className="flex-shrink-0 rounded-[20px] object-cover"
-                                    />
-                                </Helmet>
-                            </div>
+            {/* Card 3 - Auto Mechanics */}
+            <div className="w-full">
+                <img
+                    src={image6}
+                    alt="Auto Mechanics"
+                    className="w-full h-auto object-contain max-h-[80vh]"
+                />
+            </div>
 
-                            {/* Card 3 - Auto Mechanics */}
-                            <div className="rounded-[20px] flex flex-col items-center ">
-                                <Helmet>
-                                    <img
-
-                                        src={image6}
-                                        alt="Auto Mechanics"
-                                        className="flex-shrink-0 rounded-[20px] object-cover"
-                                    />
-                                </Helmet>
-                            </div>
-
-                            {/* Card 4 - Fire fighter */}
-                            <div className="rounded-[20px] flex flex-col items-center">
-                                <Helmet>
-                                    <img
-                                        src={image7}
-                                        alt="Fire fighter"
-                                        className="flex-shrink-0 rounded-[20px] object-cover"
-                                    />
-                                </Helmet>
-
-                            </div>
-                        </Carousel>
-                    </div>
+            {/* Card 4 - Fire fighter */}
+            <div className="w-full">
+                <img
+                    src={image7}
+                    alt="Fire fighter"
+                    className="w-full h-auto object-contain max-h-[80vh]"
+                />
+            </div>
+        </Carousel>
+    </div>
+</div>
+                {/* Image 8 below carousel in mobile view */}
+                <div className="mt-6 px-4 pb-8">
+                    <img 
+                        src={image8} 
+                        alt="Additional information" 
+                        className="w-full h-auto rounded-[20px] object-contain"
+                        style={{
+                            display: 'block',
+                            maxWidth: '100%',
+                            margin: '0 auto'
+                        }}
+                    />
                 </div>
             </div>
         </div>

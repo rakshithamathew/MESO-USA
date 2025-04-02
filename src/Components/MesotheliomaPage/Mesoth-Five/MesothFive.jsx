@@ -32,19 +32,19 @@ const MesothFive = () => {
                     {/* Image container */}
                     <div className="flex justify-center md:justify-start pt-[20px] md:pt-[40px] md:pl-[100px] md:w-[35%] relative">
                         {/* White vertical line - positioned at the start of image container */}
-                        <div className="block w-[3px] h-[385%] sm:h-[385%] absolute top-[0%] left-[10px] md:left-[50px] bg-[#f7ede3] z-20"></div>
+                        <div className="block w-[3px] h-[385%] sm:h-[385%] absolute top-[0%] left-[25px] md:left-[50px] bg-[#f7ede3] z-20"></div>
 
                         <img className="w-[200px] md:w-[298px] h-[200px] md:h-[298px] overflow-hidden relative z-10" alt="" src={Img4} />
                     </div>
                     
                     {/* Content container */}
-                    <div className="flex flex-col md:py-[45px] px-[5%] md:w-[65%]">
+                    <div className="flex flex-col md:py-[45px] pl-[35px] sm:pl-[40px] md:pl-[5%] pr-[5%] md:w-[65%]">
                         <div className="font-georgia pt-[20px] md:pt-0">
                             <i className="text-[32px] md:text-[48px] underline">Pleural Mesothelioma</i>
                         </div>
                         
-                        <div className="mt-[25px] rounded-[20px] bg-[rgba(255,255,255,0.7)] border border-[rgba(75,44,94,0.2)] overflow-hidden py-3 px-6 text-[24px] md:text-[32px] text-[#4b2c5e] inline-block">
-                            <div>
+                        <div className="mt-[25px] rounded-[20px] bg-[rgba(255,255,255,0.7)] border border-[rgba(75,44,94,0.2)] overflow-hidden py-3 px-6 text-[16px] md:text-[32px] text-[#4b2c5e] w-fit">
+                            <div className="flex whitespace-nowrap">
                                 <b>Lungs</b>
                                 <span>{` - `}</span>
                                 <b>75%</b>
@@ -89,7 +89,7 @@ const MesothFive = () => {
                     {/* Image container */}
                     <div className="flex justify-center md:justify-start pt-[20px] md:pt-[40px] md:pl-[100px] md:w-[35%] relative">
                         {/* White vertical line - positioned at the start of image container */}
-                        <div className="block w-[3px] h-[385%] sm:h-[385%] absolute top-[0%] left-[10px] md:left-[50px] bg-[#f7ede3] z-20"></div>
+                        <div className="block w-[3px] h-[385%] sm:h-[385%] absolute top-[0%] left-[25px] md:left-[50px] bg-[#f7ede3] z-20"></div>
 
                         <div className="w-[200px] md:w-[288px] h-[200px] md:h-[288px] relative">
                             <img className="h-[93.58%] w-[88.19%] absolute top-[13.25%] right-[3.47%] bottom-[13.17%] left-[8.33%] max-w-full overflow-hidden max-h-full" alt="" src={Img5} />
@@ -97,13 +97,13 @@ const MesothFive = () => {
                     </div>
                     
                     {/* Content container */}
-                    <div className="flex flex-col md:py-[45px] px-[5%] md:w-[65%]">
+                    <div className="flex flex-col md:py-[45px] pl-[35px] sm:pl-[40px] md:pl-[5%] pr-[5%] md:w-[65%]">
                         <div className="font-georgia pt-[20px] md:pt-0">
                             <i className="text-[32px] md:text-[48px] underline">Peritoneal Mesothelioma</i>
                         </div>
                         
-                        <div className="mt-[25px] rounded-[20px] bg-[rgba(255,255,255,0.7)] border border-[rgba(75,44,94,0.2)] overflow-hidden py-3 px-6 text-[24px] md:text-[32px] text-[#4b2c5e] inline-block">
-                            <div>
+                        <div className="mt-[25px] rounded-[20px] bg-[rgba(255,255,255,0.7)] border border-[rgba(75,44,94,0.2)] overflow-hidden py-3 px-6 text-[16px] md:text-[32px] text-[#4b2c5e] w-fit">
+                            <div className="flex whitespace-nowrap">
                                 <b>{`Abdomen `}</b>
                                 <span>{`- `}</span>
                                 <b>15-20%</b>
@@ -149,19 +149,19 @@ const MesothFive = () => {
                     {/* Image container */}
                     <div className="flex justify-center md:justify-start pt-[20px] md:pt-[40px] md:pl-[100px] md:w-[35%] relative">
                         {/* White vertical line - positioned at the start of image container */}
-                        <div className="block w-[3px] h-[385%] sm:h-[385%] absolute top-[0%] left-[10px] md:left-[50px] bg-[#f7ede3] z-20"></div>
+                        <div className="block w-[3px] h-[385%] sm:h-[385%] absolute top-[0%] left-[25px] md:left-[50px] bg-[#f7ede3] z-20"></div>
 
                         <img className="w-[200px] md:w-[288px] h-[200px] md:h-[288px] overflow-hidden" alt="" src={Img6} />
                     </div>
                     
                     {/* Content container */}
-                    <div className="flex flex-col md:py-[45px] px-[5%] md:w-[65%]">
+                    <div className="flex flex-col md:py-[45px] pl-[35px] sm:pl-[40px] md:pl-[5%] pr-[5%] md:w-[65%]">
                         <div className="font-georgia pt-[20px] md:pt-0">
                             <i className="text-[32px] md:text-[48px] underline">Pericardial Mesothelioma</i>
                         </div>
                         
-                        <div className="mt-[25px] rounded-[20px] bg-[rgba(255,255,255,0.7)] border border-[rgba(75,44,94,0.2)] overflow-hidden py-3 px-6 text-[24px] md:text-[32px] text-[#4b2c5e] inline-block">
-                            <div>
+                        <div className="mt-[25px] rounded-[20px] bg-[rgba(255,255,255,0.7)] border border-[rgba(75,44,94,0.2)] overflow-hidden py-3 px-6 text-[16px] md:text-[32px] text-[#4b2c5e] w-fit">
+                            <div className="flex whitespace-nowrap">
                                 <b>Heart</b>
                                 <span> -</span>
                                 <b> Less than 1%</b>
@@ -206,7 +206,7 @@ const MesothFive = () => {
                     {/* Image container */}
                     <div className="flex justify-center md:justify-start pt-[20px] md:pt-[40px] md:pl-[100px] md:w-[35%] relative">
                         {/* White vertical line - positioned at the start of image container */}
-                        <div className="block w-[3px] h-[385%] sm:h-[385%] absolute top-[0%] left-[10px] md:left-[50px] bg-[#f7ede3] z-20"></div>
+                        <div className="block w-[3px] h-[385%] sm:h-[385%] absolute top-[0%] left-[25px] md:left-[50px] bg-[#f7ede3] z-20"></div>
 
                         <div className="w-[200px] md:w-[288px] h-[200px] md:h-[288px] relative">
                             <img className="h-[83.33%] w-[61.15%] absolute top-[8.34%] right-[24.52%] bottom-[8.33%] left-[14.34%] max-w-full overflow-hidden max-h-full" alt="" src={Img7} />
@@ -214,13 +214,13 @@ const MesothFive = () => {
                     </div>
                     
                     {/* Content container */}
-                    <div className="flex flex-col md:py-[45px] px-[5%] md:w-[65%]">
+                    <div className="flex flex-col md:py-[45px] pl-[35px] sm:pl-[40px] md:pl-[5%] pr-[5%] md:w-[65%]">
                         <div className="font-georgia pt-[20px] md:pt-0">
                             <i className="text-[32px] md:text-[48px] underline">Testicular Mesothelioma</i>
                         </div>
                         
-                        <div className="mt-[25px] rounded-[20px] bg-[rgba(255,255,255,0.7)] border border-[rgba(75,44,94,0.2)] overflow-hidden py-3 px-6 text-[24px] md:text-[32px] text-[#4b2c5e] inline-block">
-                            <div>
+                        <div className="mt-[25px] rounded-[20px] bg-[rgba(255,255,255,0.7)] border border-[rgba(75,44,94,0.2)] overflow-hidden py-3 px-6 text-[16px] md:text-[32px] text-[#4b2c5e] w-fit">
+                            <div className="flex whitespace-nowrap">
                                 <b>Testicles</b>
                                 <span>{` - `}</span>
                                 <b>Rarest Form</b>

@@ -27,7 +27,7 @@ function MesoFAQ() {
         {
             id: 3,
             question: 'How long do I have to file a mesothelioma claim?',
-            answer: 'You may receive compensation for medical bills, lost wages, pain, suffering, and wrongful death claims.',
+            answer: 'The time limit to file a lawsuit depends on your states statute of limitations. Typically, it ranges from 1 to 5 years after diagnosis. Its best to act fast and consult a legal expert.',
             category: 'law',
             expanded: false
         },
@@ -73,70 +73,14 @@ function MesoFAQ() {
 
     return (
         <section className="py-1 bg-[#FAF3EC] font-sans">
-            <div className="max-w-8xl m-32">
-                {/* <h2 className="w-[914px] text-[#4B2C5E] font-georgia italic text-[80px] font-normal leading-normal"
-                    style={{ fontFeatureSettings: "'dlig' on" }}>
-                    Frequently Asked Questions
-                </h2> */}
+            <div className="max-w-8xl m-32 mt-8">
                 <h2
-                    className="w-full max-w-[914px] text-[#4B2C5E] font-georgia italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-normal leading-normal text-left"
+                    className="w-full max-w-[914px] text-[#4B2C5E] font-georgia italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-normal leading-normal text-left relative sm:static sm:right-0 right-[70px]"
                     style={{ fontFeatureSettings: "'dlig' on" }}
                 >
                     Frequently Asked Questions
                 </h2>
 
-                {/* <div className="flex flex-col lg:flex-row gap-10">
-                    <div className="lg:w-1/3">
-
-                    </div>
-
-                    <div className="lg:w-3/4">
-                        <div className="bg-white rounded-2xl p-10 shadow-lg relative overflow-hidden">
-                            <div className="absolute inset-0 bg-orange-100 opacity-15 pointer-events-none z-0"></div>
-
-                            <div className="relative z-10">
-                                {filteredItems.length > 0 ? (
-                                    filteredItems.map((item, index) => (
-                                        <div
-                                            key={item.id}
-                                            className={`py-2 ${expandedItems[item.id] ? 'expanded' : ''}`}
-                                        >
-                                            {index > 0 && <div className="h-px bg-[#4B2C5E] my-3 md:my-8"></div>}
-                                            <div
-                                                className="flex items-center cursor-pointer"
-                                                onClick={() => toggleItem(item.id)}
-                                            >
-                                                <button
-                                                    className={`w-8 h-8 flex-shrink-0 p-0 mr-4 relative transition-transform duration-300 ${expandedItems[item.id] ? 'rotate-0' : ''}`}
-                                                    aria-label="Toggle answer"
-                                                >
-                                                    <div className="relative w-6 h-6 block">
-                                                        <span className="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-6 bg-amber-600 transition-opacity duration-300" style={{ opacity: expandedItems[item.id] ? 0 : 1 }}></span>
-                                                        <span className="absolute top-1/2 left-0 -translate-y-1/2 w-6 h-1 bg-amber-600"></span>
-                                                    </div>
-                                                </button>
-                                                <h3 className="text-2xl md:text-3xl font-bold text-[#4B2C5E] flex-1">
-                                                    {item.question}
-                                                </h3>
-                                            </div>
-                                            {expandedItems[item.id] && (
-                                                <div className="pt-5 pl-12 animate-fadeIn">
-                                                    <p className="text-xl text-[#4B2C5E] leading-relaxed">
-                                                        {item.answer}
-                                                    </p>
-                                                </div>
-                                            )}
-                                        </div>
-                                    ))
-                                ) : (
-                                    <div className="py-10 text-center">
-                                        <p className="text-xl text-gray-500">No questions found for this category.</p>
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
                 <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
                     <div className="w-full lg:w-1/3">
                     </div>

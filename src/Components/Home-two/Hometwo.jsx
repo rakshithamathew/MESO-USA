@@ -1,15 +1,76 @@
-
-
-import React from "react";
+import React, { useState } from "react";
 import Vector2 from "../../assets/Vector2.png";
 import Vector1 from "../../assets/Vector1.png";
+import TextField from '@mui/material/TextField';
+
+const textFieldStyle = {
+  '& .MuiInputLabel-root': {
+    color: '#4b2c5e',
+    fontSize: '20px',
+    fontFamily: 'Helvetica',
+    fontWeight: 'bold',
+    '&.Mui-focused': {
+      color: '#4b2c5e'
+    }
+  },
+  '& .MuiInput-root': {
+    fontSize: '20px',
+    fontFamily: 'Helvetica',
+    color: '#4b2c5e',
+    '&:before': {
+      borderBottomColor: 'rgba(75,44,94,0.4)'
+    },
+    '&:hover:not(.Mui-disabled):before': {
+      borderBottomColor: 'rgba(75,44,94,0.6)'
+    },
+    '&:after': {
+      borderBottomColor: '#4b2c5e'
+    },
+    '&.Mui-focused': {
+      color: '#4b2c5e'
+    }
+  },
+  '& .MuiFormHelperText-root': {
+    fontSize: '14px',
+    fontFamily: 'Helvetica'
+  },
+  '& .Mui-error': {
+    color: '#d32f2f',
+    '&:after': {
+      borderBottomColor: '#d32f2f'
+    }
+  }
+};
 
 const Hometwo = () => {
+  // State for form fields
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    phoneNumber: '',
+    emailId: ''
+  });
+
+  // Handle input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    // Add your form submission logic here
+  };
+
   return (
     <>
-      {/* Desktop Version (unchanged) */}
+      {/* Desktop Version */}
       <div className="hidden md:block bg-[#FAF3EC] font-georgia m-0 p-0">
-        {/* ... (keep all your existing desktop code) ... */}
         <div className="bg-[#FAF3EC] font-georgia m-0 p-0 ">
       <div className="w-[1440px] h-[1200px] flex-shrink-0 ">
         <div className="absolute mt-32">
@@ -43,50 +104,73 @@ const Hometwo = () => {
           <p className="text-[#4B2C5E] font-feature-dlig font-georgia text-[32px] italic font-normal leading-none w-[579px] text-left h-[100px]">
             <em>We're here to walk beside you every step of the way not just as professionals, but as people who care.</em>
           </p>
+          <form onSubmit={handleSubmit}>
           <div className="flex mt-16">
-            <div className="flex-1">
-              <label className="text-[#4B2C5E] font-feature-dlig font-helvetica text-[24px] font-bold leading-normal  text-left block mb-[8px] w-[285.934px]">
-                First Name
-              </label>
-              <input
-                type="text"
-                className="border-0 rounded-none text-[#4B2C5E] font-feature-dlig font-helvetica text-[2px] font-bold leading-normal ml-[-10%] w-[78%] my-[8%] mx-[7%] h-[0.2px] bg-[rgba(75,44,94,0.56)]"
+            <div className="flex-1 px-4">
+              <TextField
+                id="firstName"
+                name="firstName"
+                label="First Name"
+                variant="standard"
+                fullWidth
+                value={formData.firstName}
+                onChange={handleChange}
+                sx={{
+                  ...textFieldStyle,
+                  marginBottom: '60px' 
+                }}
               />
-              <label className="text-[#4B2C5E] font-feature-dlig font-helvetica text-[24px] font-bold leading-normal  text-left block mb-[8px] w-[285.934px]">
-                Phone Number
-              </label>
-              <input
-                type="text"
-                className="border-0 rounded-none text-[#4B2C5E] font-feature-dlig font-helvetica text-[2px] font-bold leading-normal w-[78%] ml-[-10%] my-[8%] mx-[7%] h-[0.2px] bg-[rgba(75,44,94,0.56)]"
+              <TextField
+                id="phoneNumber"
+                name="phoneNumber"
+                label="Phone Number"
+                variant="standard"
+                fullWidth
+                value={formData.phoneNumber}
+                onChange={handleChange}
+                sx={textFieldStyle}
               />
             </div>
 
-            <div className="flex-1">
-              <label className="text-[#4B2C5E] font-feature-dlig font-helvetica text-[24px] font-bold leading-normal text-left block mb-[8px] w-[285.934px]">
-                Last Name
-              </label>
-              <input
-                type="text"
-                className="border-0 rounded-none text-[#4B2C5E] font-feature-dlig font-helvetica text-[2px] font-bold leading-normal w-[78%] ml-[-15%] my-[8%] mx-[7%] h-[0.2px] bg-[rgba(75,44,94,0.56)]"
+            <div className="flex-1 px-4">
+              <TextField
+                id="lastName"
+                name="lastName"
+                label="Last Name"
+                variant="standard"
+                fullWidth
+                value={formData.lastName}
+                onChange={handleChange}
+                sx={{
+                  ...textFieldStyle,
+                  marginBottom: '60px'
+                }}
               />
-              <label className="text-[#4B2C5E] font-feature-dlig font-helvetica text-[24px] font-bold leading-normal  text-left block mb-[8px] w-[285.934px]">
-                Email ID
-              </label>
-              <input
-                type="email"
-                className="border-0 rounded-none text-[#4B2C5E] font-feature-dlig font-helvetica text-[2px] font-bold leading-normal ml-[-15%] w-[78%] my-[8%] mx-[7%] h-[0.2px] bg-[rgba(75,44,94,0.56)]"
+              <TextField
+                id="emailId"
+                name="emailId"
+                label="Email ID"
+                variant="standard"
+                fullWidth
+                value={formData.emailId}
+                onChange={handleChange}
+                sx={textFieldStyle}
               />
             </div>
           </div>
-          <button className="inline-flex h-[71px] px-[24px] justify-center items-center gap-[10px] flex-shrink-0 rounded-[20px] bg-[#2E4A7D] text-[#F8F2E9] font-feature-dlig font-helvetica text-[20px] font-bold leading-normal ml-[-76%] border-none hover:bg-[#374A67]">
+          <button 
+            type="submit"
+            className="mt-16 inline-flex h-[71px] px-[24px] justify-center items-center gap-[10px] flex-shrink-0 rounded-[20px] bg-[#2E4A7D] text-[#F8F2E9] font-feature-dlig font-helvetica text-[20px] font-bold leading-normal ml-[-76%] border-none hover:bg-[#374A67]"
+          >
             Begin Here
           </button>
+          </form>
         </div>
       </div>
     </div>
       </div>
 
-      {/* Mobile Version - updated with proper alignment */}
+      {/* Mobile Version - updated with Material UI fields */}
       <div className="block md:hidden bg-[#FAF3EC] font-georgia p-5">
         {/* Images at the top */}
         <div className="flex flex-col items-center">
@@ -114,57 +198,73 @@ const Hometwo = () => {
           </p>
         </div>
 
-        {/* Form container - centered below text */}
+        {/* Form container - centered below text with Material UI components */}
         <div className="p-6 rounded-[20px] mt-8 bg-white shadow-md mx-auto max-w-[500px]">
           <p className="text-[#4B2C5E] font-georgia text-xl italic mb-6 text-center">
-            <em>We’re here to walk beside you every step of the way not just as professionals, but as people who care.</em>
+            <em>We're here to walk beside you every step of the way not just as professionals, but as people who care.</em>
           </p>
           
-          <div className="space-y-4">
-            <div>
-              <label className="text-[#4B2C5E] font-helvetica text-lg font-bold block mb-2">
-                First Name
-              </label>
-              <input
-                type="text"
-                className="w-full p-3 bg-[rgba(75,44,94,0.1)] border border-[#4B2C5E]/30 rounded-lg"
-              />
-            </div>
+          <form onSubmit={handleSubmit} className="">
+            <TextField
+              id="firstName-mobile"
+              name="firstName"
+              label="First Name"
+              variant="standard"
+              fullWidth
+              value={formData.firstName}
+              onChange={handleChange}
+              sx={{
+                ...textFieldStyle,
+                marginBottom: '24px'
+              }}
+            />
             
-            <div>
-              <label className="text-[#4B2C5E] font-helvetica text-lg font-bold block mb-2">
-                Last Name
-              </label>
-              <input
-                type="text"
-                className="w-full p-3 bg-[rgba(75,44,94,0.1)] border border-[#4B2C5E]/30 rounded-lg"
-              />
-            </div>
+            <TextField
+              id="lastName-mobile"
+              name="lastName"
+              label="Last Name"
+              variant="standard"
+              fullWidth
+              value={formData.lastName}
+              onChange={handleChange}
+              sx={{
+                ...textFieldStyle,
+                marginBottom: '24px'
+              }}
+            />
             
-            <div>
-              <label className="text-[#4B2C5E] font-helvetica text-lg font-bold block mb-2">
-                Phone Number
-              </label>
-              <input
-                type="tel"
-                className="w-full p-3 bg-[rgba(75,44,94,0.1)] border border-[#4B2C5E]/30 rounded-lg"
-              />
-            </div>
+            <TextField
+              id="phoneNumber-mobile"
+              name="phoneNumber"
+              label="Phone Number"
+              variant="standard"
+              fullWidth
+              value={formData.phoneNumber}
+              onChange={handleChange}
+              sx={{
+                ...textFieldStyle,
+                marginBottom: '24px'
+              }}
+            />
             
-            <div>
-              <label className="text-[#4B2C5E] font-helvetica text-lg font-bold block mb-2">
-                Email ID
-              </label>
-              <input
-                type="email"
-                className="w-full p-3 bg-[rgba(75,44,94,0.1)] border border-[#4B2C5E]/30 rounded-lg"
-              />
-            </div>
-          </div>
-          
-          <button className="w-full py-4 mt-6 rounded-[20px] bg-[#2E4A7D] text-[#F8F2E9] font-helvetica text-lg font-bold hover:bg-[#374A67]">
-            Begin Here
-          </button>
+            <TextField
+              id="emailId-mobile"
+              name="emailId"
+              label="Email ID"
+              variant="standard"
+              fullWidth
+              value={formData.emailId}
+              onChange={handleChange}
+              sx={textFieldStyle}
+            />
+            
+            <button 
+              type="submit" 
+              className="w-full py-4 mt-8 rounded-[20px] bg-[#2E4A7D] text-[#F8F2E9] font-helvetica text-lg font-bold hover:bg-[#374A67]"
+            >
+              Begin Here
+            </button>
+          </form>
         </div>
       </div>
     </>
