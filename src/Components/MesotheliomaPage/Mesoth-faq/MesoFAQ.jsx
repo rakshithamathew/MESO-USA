@@ -27,7 +27,7 @@ function MesoFAQ() {
         {
             id: 3,
             question: 'How long do I have to file a mesothelioma claim?',
-            answer: 'You may receive compensation for medical bills, lost wages, pain, suffering, and wrongful death claims.',
+            answer: 'The time limit to file a lawsuit depends on your state\'s statute of limitations. Typically, it ranges from 1 to 5 years after diagnosis. It\'s best to act fast and consult a legal expert.',
             category: 'law',
             expanded: false
         },
