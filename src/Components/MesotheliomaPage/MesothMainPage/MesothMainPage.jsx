@@ -23,7 +23,7 @@ function MesothMainPage() {
       <MesothFourth />
       <MesothThree />
      <MesoFAQ />
-     <HomeEight />
+     {/* <HomeEight /> */}
      <Footer />
     </div>
   )

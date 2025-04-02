@@ -48,86 +48,79 @@ const Footer = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {/* Logo and Company Info */}
                         <div className="flex flex-col items-center md:items-start">
-                            <div className="w-[219px] h-[222.7px] text-[35.58px] font-georgia relative">
+                            <div className="w-[180px] md:w-[219px] h-auto md:h-[222.7px] text-[35.58px] font-georgia relative mb-6 md:mb-0">
                                 <img className="w-full h-full" alt="Logo" src={Logo} />
-                                {/* <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">Logo</div> */}
                             </div>
                         </div>
 
                         {/* Navigation Links */}
-                        <div className="flex flex-col space-y-3 md:text-left relative right-[135px]">
+                        <div className="flex flex-col space-y-3 items-center md:items-start md:text-left md:relative md:right-[135px]">
                         <NavLink
-            to="/"
-            style={{ textDecoration: 'none' }}
-            className={({ isActive }) =>
-              `font-helvetica font-normal text-[24px] cursor-pointer ${isActive ? 'text-[#2E4A7D]' : 'text-[#4B2C5E]'
-              }`
-            }
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/MesothMainPage"
-            style={{ textDecoration: 'none' }}
-            className={({ isActive }) =>
-              `font-helvetica font-normal text-[24px] cursor-pointer ${isActive ? 'text-[#2E4A7D]' : 'text-[#4B2C5E]'
-              }`
-            }
-          >
-            Mesothelioma
-          </NavLink>
-          <NavLink
-            to="/AboutMain"
-            style={{ textDecoration: 'none' }}
-            className={({ isActive }) =>
-              `font-helvetica font-normal text-[24px] cursor-pointer ${isActive ? 'text-[#2E4A7D]' : 'text-[#4B2C5E]'
-              }`
-            }
-          >
-            About us
-          </NavLink> </div>
+                            to="/"
+                            style={{ textDecoration: 'none' }}
+                            className={({ isActive }) =>
+                              `font-helvetica font-normal text-[20px] md:text-[24px] cursor-pointer ${isActive ? 'text-[#2E4A7D]' : 'text-[#4B2C5E]'
+                              }`
+                            }
+                          >
+                            Home
+                          </NavLink>
+                          <NavLink
+                            to="/MesothMainPage"
+                            style={{ textDecoration: 'none' }}
+                            className={({ isActive }) =>
+                              `font-helvetica font-normal text-[20px] md:text-[24px] cursor-pointer ${isActive ? 'text-[#2E4A7D]' : 'text-[#4B2C5E]'
+                              }`
+                            }
+                          >
+                            Mesothelioma
+                          </NavLink>
+                          <NavLink
+                            to="/AboutMain"
+                            style={{ textDecoration: 'none' }}
+                            className={({ isActive }) =>
+                              `font-helvetica font-normal text-[20px] md:text-[24px] cursor-pointer ${isActive ? 'text-[#2E4A7D]' : 'text-[#4B2C5E]'
+                              }`
+                            }
+                          >
+                            About us
+                          </NavLink> 
+                        </div>
 
                         {/* Newsletter */}
-                        <div className="flex flex-col space-y-4">
+                        <div className="flex flex-col space-y-4 mt-6 md:mt-0">
                             <form onSubmit={handleSubscribe} className="w-full max-w-[436px] mx-auto md:mx-0">
-                                <b className="block text-[18px] mb-4 font-bold font-['Helvetica']">
+                                <b className="block text-[16px] md:text-[18px] mb-4 font-bold font-['Helvetica'] text-center md:text-left">
                                     Join our newsletter
                                 </b>
 
-                                <div className="flex">
-                                    {/* <input
-                                        type="email"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        placeholder="Enter email id"
-                                        className="flex-1 rounded-l-[10px] border border-[rgba(75,44,94,0.52)] px-6 py-4 text-[20px] outline-none"
-                                    /> */}
+                                <div className="flex flex-col sm:flex-row">
                                     <input
                                         type="email"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                         placeholder="Enter email id"
-                                        className="flex-1 rounded-l-[10px] border-2 border-[#4B2C5E] px-6 py-4 text-[20px] outline-none bg-[#DCC0A7] placeholder-[#4B2C5E]"
+                                        className="flex-1 rounded-[10px] sm:rounded-l-[10px] sm:rounded-r-none border-2 border-[#4B2C5E] px-4 md:px-6 py-3 md:py-4 text-[16px] md:text-[20px] outline-none bg-[#DCC0A7] placeholder-[#4B2C5E] mb-2 sm:mb-0"
                                     />
 
                                     <button
                                         type="submit"
-                                        className="rounded-r-[10px] bg-[#4b2c5e] px-6 py-4 text-[#f8f2e9]"
+                                        className="rounded-[10px] sm:rounded-l-none sm:rounded-r-[10px] bg-[#4b2c5e] px-4 md:px-6 py-3 md:py-4 text-[#f8f2e9] text-[16px] md:text-[20px] mb-2"
                                     >
                                         <b>Subscribe</b>
                                     </button>
                                 </div>
                                 {subscriptionStatus && (
-                                    <div className="mt-2 text-[16px]">
+                                    <div className="mt-2 text-[14px] md:text-[16px] text-center sm:text-left">
                                         {subscriptionStatus}
                                     </div>
                                 )}
                             </form>
 
                             {/* Contact Info */}
-                            <div className="flex items-center justify-center md:justify-end space-x-4 mt-8">
-                                <img className="w-8 h-8" alt="" src={emailImg} />
-                                <a className="text-[18px] underline leading-[34px] font-['Helvetica'] text-[#4B2C5E]"
+                            <div className="flex items-center justify-center md:justify-end space-x-4 mt-6 md:mt-8">
+                                <img className="w-6 h-6 md:w-8 md:h-8" alt="" src={emailImg} />
+                                <a className="text-[16px] md:text-[18px] underline leading-[34px] font-['Helvetica'] text-[#4B2C5E]"
                                     href="mailto:info@connect2attorney.com"
                                     target="_blank"
                                     rel="noopener noreferrer">
@@ -137,27 +130,34 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Social Media Icons */}
-
-
                     {/* Footer Bottom */}
-                    <div className="mt-8 pt-4 border-t border-[#f3e2c8] flex items-center justify-between text-[rgba(75,44,94,0.66)]">
-                        <div>
-                            <span className="text-[18px] font-medium font-['Helvetica'] text-[#c6c3c3] mr-2">©</span>
+                    <div className="mt-8 pt-4 border-t border-[#f3e2c8] flex flex-col sm:flex-row items-center justify-between text-[rgba(75,44,94,0.66)]">
+                        <div className="text-center sm:text-left mb-6 sm:mb-0 text-[14px] md:text-[16px]">
+                            <span className="text-[16px] md:text-[18px] font-medium font-['Helvetica'] text-[#c6c3c3] mr-2">©</span>
                             <span>2025.</span>
                             <span className="ml-2">All rights reserved</span>
                         </div>
                         <div>
-                            <div className="flex justify-center space-x-6 mt-8" >
-                                <div className="w-[61px] h-[62px]">
-                                    <img className="w-full h-full" alt="Social" src={facebook} />
+                            <div className="flex justify-center space-x-3 md:space-x-6">
+                                <div className="w-[40px] h-[40px] md:w-[61px] md:h-[62px]">
+                                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                                        <img className="w-full h-full" alt="Facebook" src={facebook} />
+                                    </a>
                                 </div>
-                                <img className="w-[61px] h-[62px]" alt="Social" src={twitter} />
-                                <div className="w-[61px] h-[62px]">
-                                    <img className="w-full h-full" alt="Social" src={linkedin} />
+                                <div className="w-[40px] h-[40px] md:w-[61px] md:h-[62px]">
+                                    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                                        <img className="w-full h-full" alt="Twitter" src={twitter} />
+                                    </a>
                                 </div>
-                                <div className="w-[61px] h-[62px]">
-                                    <img className="w-full h-full" alt="Social" src={instagram} />
+                                <div className="w-[40px] h-[40px] md:w-[61px] md:h-[62px]">
+                                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                                        <img className="w-full h-full" alt="LinkedIn" src={linkedin} />
+                                    </a>
+                                </div>
+                                <div className="w-[40px] h-[40px] md:w-[61px] md:h-[62px]">
+                                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                                        <img className="w-full h-full" alt="Instagram" src={instagram} />
+                                    </a>
                                 </div>
                             </div>
                         </div>
