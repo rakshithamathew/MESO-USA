@@ -10,7 +10,7 @@ const AboutUs5 = () => {
     <div className="flex flex-col items-center justify-center pt-[100px] md:pt-[200px] relative -top-[100px] md:-top-[150px] px-4 md:px-8">
 
       {/* Header */}
-      <div className="mb-8 md:mb-12">
+      <div className="mb-8 md:mb-12 mt-5">
         <h1 className="text-[48px] md:text-[96px] text-[#2e4a7d] text-center font-georgia italic inline-block">
           Why Us?
         </h1>

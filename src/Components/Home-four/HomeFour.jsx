@@ -44,8 +44,8 @@ function HomeFour() {
                 {/* Quote Section */}
                 <div className="flex justify-center items-center h-[50vh] bg-[#FAF3EC]">
                     <div className="flex items-center text-center max-w-[1400px] p-10 relative">
-                        <img src={leftSvg} alt="left" className="w-[153px] h-[224px] absolute z-10 ml-[16%]" />
-                        <p className="text-[#2E4A7D] text-center font-georgia italic font-bold text-[17px] p-5 leading-normal [font-feature-settings:'dlig'_on] px-10 w-[498px]">
+                        <img src={leftSvg} alt="left" className="w-[153px] h-[224px] absolute z-10 ml-[14%]" />
+                        <p className="text-[#2E4A7D] text-center font-georgia italic font-bold text-[17px] p-5 leading-normal [font-feature-settings:'dlig'_on] px-10 w-[478px]">
                             Decades ago, asbestos was everywhere on job sites, in homes, even in
                             military uniforms. No one knew the dangers. No one said it could
                             remain in the body for years, silently causing harm.

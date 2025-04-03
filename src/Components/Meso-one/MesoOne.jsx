@@ -6,7 +6,7 @@ import image3 from "../../assets/Group 35636.png";
 
 function MesoOne() {
   return (
-    <div style={{ backgroundColor: "#FAF3EC" }} className="flex justify-center">
+    <div style={{ backgroundColor: "#FAF3EC" }} className="flex justify-center p-1">
       <div className="max-w-7xl w-full px-4 sm:px-6 lg:px-8">
         {/* Mobile Layout */}
         <div className="lg:hidden flex flex-col items-center py-8">
@@ -17,7 +17,7 @@ function MesoOne() {
             We connect individuals and families impacted by mesothelioma or asbestos exposure with the <b>nation's most trusted legal services.</b> ensuring you secure the <b>justice and support you rightfully deserve</b> .
           </p>
 
-          <div className="relative w-[395px] h-[200px] max-w-lg mt-6">
+          <div className="relative w-[395px] h-[200px] max-w-lg mt-4 p-2">
            
             <img
               src={image3}

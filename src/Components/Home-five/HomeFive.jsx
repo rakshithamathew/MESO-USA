@@ -91,7 +91,7 @@ function HomeFive() {
             <Helmet>
                 <style>{overrideCarouselCSS}</style>
             </Helmet>
-            
+
             {/* Desktop Version */}
             <div className="hidden md:flex flex-col gap-3 p-[5%] bg-[#F5E7DA80]">
                 {/* First Row */}
@@ -186,68 +186,68 @@ function HomeFive() {
                 </div>
 
                 {/* Image Section */}
-<div className="relative mt-4 w-full">
-    <div className="relative w-full">
-        <Carousel
-            ref={carouselRef}
-            showArrows={true}
-            showStatus={false}
-            showThumbs={false}
-            infiniteLoop={true}
-            centerMode={true}
-            centerSlidePercentage={100} // Changed to 100% to take full width
-            emulateTouch={true}
-            swipeable={true}
-            showIndicators={false}
-            dynamicHeight={true}
-            className="w-full"
-            swipeScrollTolerance={50}
-            preventMovementUntilSwipeScrollTolerance={true}
-            renderThumbs={() => []}
-        >
-            {/* Card 1 - Construction Workers */}
-            <div className="w-full">
-                <img
-                    src={image4}
-                    alt="Construction Workers"
-                    className="w-full h-auto object-contain max-h-[80vh]"
-                />
-            </div>
+                <div className="relative mt-4 w-full">
+                    <div className="relative w-full">
+                        <Carousel
+                            ref={carouselRef}
+                            showArrows={true}
+                            showStatus={false}
+                            showThumbs={false}
+                            infiniteLoop={true}
+                            centerMode={true}
+                            centerSlidePercentage={100} // Changed to 100% to take full width
+                            emulateTouch={true}
+                            swipeable={true}
+                            showIndicators={false}
+                            dynamicHeight={true}
+                            className="w-full"
+                            swipeScrollTolerance={50}
+                            preventMovementUntilSwipeScrollTolerance={true}
+                            renderThumbs={() => []}
+                        >
+                            {/* Card 1 - Construction Workers */}
+                            <div className="w-full">
+                                <img
+                                    src={image4}
+                                    alt="Construction Workers"
+                                    className="w-full h-auto object-contain max-h-[80vh]"
+                                />
+                            </div>
 
-            {/* Card 2 - Shipyard Workers */}
-            <div className="w-full">
-                <img
-                    src={image5}
-                    alt="Shipyard Workers"
-                    className="w-full h-auto object-contain max-h-[80vh]"
-                />
-            </div>
+                            {/* Card 2 - Shipyard Workers */}
+                            <div className="w-full">
+                                <img
+                                    src={image5}
+                                    alt="Shipyard Workers"
+                                    className="w-full h-auto object-contain max-h-[80vh]"
+                                />
+                            </div>
 
-            {/* Card 3 - Auto Mechanics */}
-            <div className="w-full">
-                <img
-                    src={image6}
-                    alt="Auto Mechanics"
-                    className="w-full h-auto object-contain max-h-[80vh]"
-                />
-            </div>
+                            {/* Card 3 - Auto Mechanics */}
+                            <div className="w-full">
+                                <img
+                                    src={image6}
+                                    alt="Auto Mechanics"
+                                    className="w-full h-auto object-contain max-h-[80vh]"
+                                />
+                            </div>
 
-            {/* Card 4 - Fire fighter */}
-            <div className="w-full">
-                <img
-                    src={image7}
-                    alt="Fire fighter"
-                    className="w-full h-auto object-contain max-h-[80vh]"
-                />
-            </div>
-        </Carousel>
-    </div>
-</div>
+                            {/* Card 4 - Fire fighter */}
+                            <div className="w-full">
+                                <img
+                                    src={image7}
+                                    alt="Fire fighter"
+                                    className="w-full h-auto object-contain max-h-[80vh]"
+                                />
+                            </div>
+                        </Carousel>
+                    </div>
+                </div>
                 {/* Image 8 below carousel in mobile view */}
                 <div className="mt-6 px-4 pb-8">
-                    <img 
-                        src={image8} 
-                        alt="Additional information" 
+                    <img
+                        src={image8}
+                        alt="Additional information"
                         className="w-full h-auto rounded-[20px] object-contain"
                         style={{
                             display: 'block',
