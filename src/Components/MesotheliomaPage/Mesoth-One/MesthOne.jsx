@@ -46,7 +46,7 @@ function MesthOne() {
 
                                         <button
                                             className="w-full h-full relative focus:outline-none"
-                                            onClick={() => window.location.href = '/contact'}
+                                            onClick={() => window.location.href = '/ClaimForm'}
                                         >
                                             <b className="relative">Get a Free Case Evaluation</b>
                                         </button>
@@ -57,7 +57,7 @@ function MesthOne() {
 
                                         <button
                                             className="w-full h-full relative focus:outline-none"
-                                            onClick={() => window.location.href = '/contact'}
+                                            onClick={() => window.location.href = '/ClaimForm'}
                                         >
                                             <b className="relative">Get a Free Case Evaluation</b>
                                         </button>

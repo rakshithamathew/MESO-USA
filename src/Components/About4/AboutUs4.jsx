@@ -23,7 +23,7 @@ const AboutUs4 = () => {
             Legal Advocacy & Compensation
           </i>
           <div className="text-[16px] md:text-[20px] font-['Helvetica'] text-[#4b2c5e] text-center flex-grow flex items-center justify-center">
-            Our legal partners have successfully recovered millions in compensation, helping families cover medical expenses, lost Wages, and other financial burdens.
+            Our legal partners have successfully recovered millions in compensation, helping families cover medical expenses, lost wages, and other financial burdens.
           </div>
         </div>
         

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import MainImg from '../../assets/aboutusMainImg.svg';
+import MainImg from '../../assets/Frame 113.png';
 import MainImgmobile from '../../assets/Frame 113.png';
 import BackgroundImg from '../../assets/aboutusImg4.svg';
 
@@ -27,7 +27,7 @@ const AboutUsPage = () => {
                         <div className="w-[719px] h-[302px] flex-shrink-0 border-[2.4px] border-[#F3E2C8]"></div>
                         <div className="w-[2.4px] h-[173px] bg-[#F3E2C8] absolute z-10 mt-12 ml-[-60%]"></div>
 
-                        <div className='mt-[-95%] w-[280px] ml-[27%]'>
+                        <div className='mt-[-84%] w-[280px] ml-[27%]'>
                             <p className="mb-4 md:mb-6 text-[12px] leading-[16px] font-helvetica font-normal not-italic text-[#4B2C5E] [font-feature-settings:'dlig']">
                                 <span>{`Our aim is to provide `}</span>
                                 <b className="font-bold">expert legal guidance, advocate for victims' rights,</b>
@@ -53,7 +53,7 @@ const AboutUsPage = () => {
 
                         <div className="w-full lg:w-1/2 order-2 lg:order-1">
                             <img
-                                className="w-full h-auto max-h-[70vh] object-contain"
+                                className="w-full h-auto mt-5 max-h-[70vh] object-contain"
                                 alt="About us visual"
                                 src={MainImgmobile}
                             />
@@ -98,7 +98,7 @@ const AboutUsPage = () => {
                     />
 
                     <img
-                        className="absolute top-[30px] left-[10vw] h-auto max-h-[95vh]"
+                        className="absolute top-[30px] left-[10vw] h-auto max-h-[85vh]"
                         alt=""
                         src={MainImg}
                     />

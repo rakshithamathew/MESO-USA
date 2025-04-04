@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 // import image1 from "../../assets/images/cardImg1.svg";
-import image2 from "../../assets/Frame 102.png";
+import image2 from "../../assets/Frame 112 (4).png";
 import image3 from "../../assets/Frame 103.png";
 import image4 from "../../assets/Frame 42.png";
 import image5 from "../../assets/Frame 42 (1).png";
@@ -10,7 +10,7 @@ import image8 from "../../assets/Frame 9.png";
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Helmet } from 'react-helmet';
-
+import { useNavigate } from 'react-router-dom';
 // Custom CSS for carousel
 const carouselStyles = {
     carousel: {
@@ -59,6 +59,11 @@ const overrideCarouselCSS = `
 `;
 
 function HomeFive() {
+    const navigate = useNavigate();
+
+    const handleImageClick = () => {
+      navigate('/MesothMainPage');
+    };
     const carouselRef = useRef(null);
 
     useEffect(() => {
@@ -135,12 +140,19 @@ function HomeFive() {
                 {/* Second Row */}
                 <div className="flex justify-between mt-[1%] gap-0">
                     <div>
-                        <img src={image3} alt="" className="h-[50px] w-[150px] object-contain absolute z-10 mt-[8%] ml-[63%]" />
+                        <img
+                            src={image3}
+                            alt=""
+                            className="h-[50px] w-[150px] object-contain absolute z-10 mt-[8%] ml-[63%] cursor-pointer"
+                            onClick={handleImageClick}
+                        />
                     </div>
                     <div className="overflow-hidden flex items-center justify-center gap-0">
                         <img src={image2} alt="" className="max-h-full max-w-full object-contain" />
                     </div>
                 </div>
+
+                {/* replace the image */}
             </div>
 
             {/* Mobile Version */}

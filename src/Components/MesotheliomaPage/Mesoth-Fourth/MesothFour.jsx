@@ -14,7 +14,7 @@ const MesothFourth = () => {
             </div> */}
             <i className="w-full max-w-4xl relative text-5xl md:text-7xl lg:text-8xl inline-block font-[Georgia] text-[#4b2c5e] text-center">Understanding Mesothelioma</i>
             <div className="text-lg md:text-2xl text-center">
-                Breaking down Mesothelioma
+                {/* Breaking down Mesothelioma */}
             </div>
             <div style={{
                 width: "100%",

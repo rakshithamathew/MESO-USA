@@ -9,24 +9,17 @@ import Img7 from '../../../assets/typeofImg7.png'
 const MesothFive = () => {
     return (
         <div className="bg-[#f7ede3] w-full flex flex-col items-center text-[32px] md:text-[48px] text-white pt-5 pb-20 relative">
-            {/* Background images - position them relative to the main container */}
             <img className="hidden md:block absolute top-[220px] right-[5%] w-[450px] lg:w-[600px] h-auto object-cover z-0" alt="" src={Img2} />
             <img className="hidden lg:block absolute h-[16.5%] w-[40%] top-[-4.51%] right-0 max-w-full overflow-hidden max-h-full z-0 top-[0px]" alt="" src={Img3} />
-            
-            {/* Main title section */}
             <div className="w-[90%] md:w-[80%] mt-[120px] md:mt-[198px] mb-[80px] md:mb-[100px] text-[48px] md:text-[96px] text-[#4b2c5e] font-georgia relative z-10">
                 <i className="block w-full md:w-[638px]">Types of Mesothelioma</i>
                 <div className="mt-[40px] md:mt-[60px] text-[18px] md:text-[24px] font-helvetica w-full md:w-[45%]">
                     Mesothelioma can develop in different parts of the body. The type of mesothelioma determines symptoms, treatment options, and prognosis.
                 </div>
             </div>
-
-            {/* Mobile background image - positioned after the title section */}
             <img className="block md:hidden w-[300px] h-auto object-cover mb-[60px]" alt="" src={Img2} />
 
-            {/* Card container */}
             <div className="flex flex-col gap-[50px] md:gap-[80px] w-full items-center relative z-10">
-                {/* Pleural Mesothelioma */}
                 <div className="relative w-[95%] md:w-[95%] ml-[5%] shadow-[0px_3px_20px_rgba(46,74,125,0.32)] bg-[rgba(46,74,125,0.44)] min-h-[600px] md:h-[532px] overflow-hidden z-10 flex flex-col md:flex-row">
 
                     {/* Image container */}
@@ -43,11 +36,11 @@ const MesothFive = () => {
                             <i className="text-[32px] md:text-[48px] underline">Pleural Mesothelioma</i>
                         </div>
                         
-                        <div className="mt-[25px] rounded-[20px] bg-[rgba(255,255,255,0.7)] border border-[rgba(75,44,94,0.2)] overflow-hidden py-3 px-6 text-[16px] md:text-[32px] text-[#4b2c5e] w-fit">
-                            <div className="flex whitespace-nowrap">
-                                <b>Lungs</b>
+                        <div className="mt-[25px] rounded-[20px] bg-[rgba(255,255,255,0.7)] border border-[rgba(75,44,94,0.2)] overflow-hidden p-2 mt-2 text-[16px] md:text-[32px] text-[#4b2c5e] w-fit">
+                            <div className="flex whitespace-nowrap mt-3">
+                                <p>Lungs</p>
                                 <span>{` - `}</span>
-                                <b>75%</b>
+                                <p>75% </p> &nbsp;
                                 <span> of Cases</span>
                             </div>
                         </div>
@@ -83,8 +76,7 @@ const MesothFive = () => {
                         </div>
                     </div>
                 </div>
-                
-                {/* Peritoneal Mesothelioma */}
+                 
                 <div className="relative w-[95%] md:w-[95%] ml-[5%] shadow-[0px_3px_20px_rgba(46,74,125,0.32)] bg-[rgba(46,74,125,0.44)] min-h-[600px] md:h-[532px] overflow-hidden z-10 flex flex-col md:flex-row">
                     {/* Image container */}
                     <div className="flex justify-center md:justify-start pt-[20px] md:pt-[40px] md:pl-[100px] md:w-[35%] relative">
@@ -94,7 +86,7 @@ const MesothFive = () => {
                         <div className="w-[200px] md:w-[288px] h-[200px] md:h-[288px] relative">
                             <img className="h-[93.58%] w-[88.19%] absolute top-[13.25%] right-[3.47%] bottom-[13.17%] left-[8.33%] max-w-full overflow-hidden max-h-full" alt="" src={Img5} />
                         </div>
-                    </div>
+                    </div>                                                                                                                                                                                  
                     
                     {/* Content container */}
                     <div className="flex flex-col md:py-[45px] pl-[35px] sm:pl-[40px] md:pl-[5%] pr-[5%] md:w-[65%]">
@@ -102,11 +94,11 @@ const MesothFive = () => {
                             <i className="text-[32px] md:text-[48px] underline">Peritoneal Mesothelioma</i>
                         </div>
                         
-                        <div className="mt-[25px] rounded-[20px] bg-[rgba(255,255,255,0.7)] border border-[rgba(75,44,94,0.2)] overflow-hidden py-3 px-6 text-[16px] md:text-[32px] text-[#4b2c5e] w-fit">
-                            <div className="flex whitespace-nowrap">
-                                <b>{`Abdomen `}</b>
-                                <span>{`- `}</span>
-                                <b>15-20%</b>
+                        <div className="mt-[25px] rounded-[20px] bg-[rgba(255,255,255,0.7)] border border-[rgba(75,44,94,0.2)] overflow-hidden py-3 px-6 text-[16px] md:text-[32px] text-[#4b2c5e] w-fit flex items-center justify-center h-auto">
+                        <div className="flex whitespace-nowrap items-center justify-center">
+                                <span>Abdomen</span>
+                                <span>{` - `}</span>
+                                <span>15-20%</span> &nbsp;
                                 <span> of Cases</span>
                             </div>
                         </div>
@@ -137,7 +129,8 @@ const MesothFive = () => {
                             <p className="m-0">&nbsp;</p>
                             <ul className="m-0 text-inherit pl-4 md:pl-8">
                                 <li>
-                                    <span>Prognosis: Better survival rates than pleural, 5-year survival up to 50% with surgery.</span>
+                                <b className="font-helvetica">Prognosis:</b>
+                                    <span> Better survival rates than pleural, 5-year survival up to 50% with surgery.</span>
                                 </li>
                             </ul>
                         </div>
@@ -160,11 +153,11 @@ const MesothFive = () => {
                             <i className="text-[32px] md:text-[48px] underline">Pericardial Mesothelioma</i>
                         </div>
                         
-                        <div className="mt-[25px] rounded-[20px] bg-[rgba(255,255,255,0.7)] border border-[rgba(75,44,94,0.2)] overflow-hidden py-3 px-6 text-[16px] md:text-[32px] text-[#4b2c5e] w-fit">
-                            <div className="flex whitespace-nowrap">
-                                <b>Heart</b>
+                        <div className="mt-[25px] rounded-[20px] bg-[rgba(255,255,255,0.7)] border border-[rgba(75,44,94,0.2)] overflow-hidden p-2  mt-2 text-[16px] md:text-[32px] text-[#4b2c5e] w-fit">
+                            <div className="flex whitespace-nowrap mt-3">
+                                <p>Heart</p>
                                 <span> -</span>
-                                <b> Less than 1%</b>
+                                <p> Less than 1%</p>&nbsp;
                                 <span> of Cases</span>
                             </div>
                         </div>
@@ -219,11 +212,11 @@ const MesothFive = () => {
                             <i className="text-[32px] md:text-[48px] underline">Testicular Mesothelioma</i>
                         </div>
                         
-                        <div className="mt-[25px] rounded-[20px] bg-[rgba(255,255,255,0.7)] border border-[rgba(75,44,94,0.2)] overflow-hidden py-3 px-6 text-[16px] md:text-[32px] text-[#4b2c5e] w-fit">
-                            <div className="flex whitespace-nowrap">
-                                <b>Testicles</b>
+                        <div className="mt-[25px] rounded-[20px] bg-[rgba(255,255,255,0.7)] border border-[rgba(75,44,94,0.2)] overflow-hidden p-2  mt-2 text-[16px] md:text-[32px] text-[#4b2c5e] w-fit">
+                            <div className="flex whitespace-nowrap mt-3">
+                                <p>Testicles</p>
                                 <span>{` - `}</span>
-                                <b>Rarest Form</b>
+                                <p>Rarest Form</p>
                             </div>
                         </div>
                         

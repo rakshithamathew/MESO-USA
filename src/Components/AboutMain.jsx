@@ -13,7 +13,7 @@ import Header from './Header/Header';
 const AboutMain = () => {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Navbar />
       <About/>
       <AboutUs2/>

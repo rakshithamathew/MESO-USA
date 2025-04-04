@@ -4,7 +4,7 @@ import twitter from '../../assets/twitter.svg';
 import linkedin from '../../assets/linkedin.svg';
 import instagram from '../../assets/insta.svg';
 import emailImg from '../../assets/email.svg';
-import Logo from '../../assets/logo.svg';
+import logo from '../../assets/Meso logo-01 1.png'
 import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
@@ -42,56 +42,66 @@ const Footer = () => {
     };
 
     return (
-        <div className="w-full relative bg-[#faf3ec] text-left text-[20px] text-[#4b2c5e] font-helvetica">
-            <div className="bg-[#dcc0a7] w-full pt-8 pb-4">
-                <div className="container mx-auto px-4 relative">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {/* Logo and Company Info */}
-                        <div className="flex flex-col items-center md:items-start">
-                            <div className="w-[180px] md:w-[219px] h-auto md:h-[222.7px] text-[35.58px] font-georgia relative mb-6 md:mb-0">
-                                <img className="w-full h-full" alt="Logo" src={Logo} />
-                            </div>
+        <div className="w-full bg-[#faf3ec] text-[#4b2c5e] font-helvetica">
+            <div className="bg-[#dcc0a7] w-full pt-8 pb-4 px-4 sm:px-6 lg:px-8">
+                <div className="container mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
+                        {/* Logo Section */}
+                        <div className="flex justify-center md:justify-start">
+                            <a href="/">
+                                <img
+                                    src={logo}
+                                    alt="Mesotheliamo Logo"
+                                    className="h-auto w-[180px] sm:w-[200px] md:mt-0 lg:mt-0"
+                                />
+                            </a>
                         </div>
 
                         {/* Navigation Links */}
-                        <div className="flex flex-col space-y-3 items-center md:items-start md:text-left md:relative md:right-[135px]">
-                        <NavLink
-                            to="/"
-                            style={{ textDecoration: 'none' }}
-                            className={({ isActive }) =>
-                              `font-helvetica font-normal text-[20px] md:text-[24px] cursor-pointer ${isActive ? 'text-[#2E4A7D]' : 'text-[#4B2C5E]'
-                              }`
-                            }
-                          >
-                            Home
-                          </NavLink>
-                          <NavLink
-                            to="/MesothMainPage"
-                            style={{ textDecoration: 'none' }}
-                            className={({ isActive }) =>
-                              `font-helvetica font-normal text-[20px] md:text-[24px] cursor-pointer ${isActive ? 'text-[#2E4A7D]' : 'text-[#4B2C5E]'
-                              }`
-                            }
-                          >
-                            Mesothelioma
-                          </NavLink>
-                          <NavLink
-                            to="/AboutMain"
-                            style={{ textDecoration: 'none' }}
-                            className={({ isActive }) =>
-                              `font-helvetica font-normal text-[20px] md:text-[24px] cursor-pointer ${isActive ? 'text-[#2E4A7D]' : 'text-[#4B2C5E]'
-                              }`
-                            }
-                          >
-                            About us
-                          </NavLink> 
-                        </div>
+                        <div className="flex flex-col space-y-3 items-center md:items-start md:pl-8 lg:pl-12">
+  <NavLink
+    to="/"
+    style={{ textDecoration: 'none' }}
+    className={({ isActive }) =>
+      `font-helvetica font-normal text-[18px] sm:text-[20px] lg:text-[24px] cursor-pointer ${
+        isActive ? 'text-[#2E4A7D]' : 'text-[#4B2C5E]'
+      }`
+    }
+    onClick={() => window.scrollTo(0, 0)}
+  >
+    Home
+  </NavLink>
+  <NavLink
+    to="/MesothMainPage"
+    style={{ textDecoration: 'none' }}
+    className={({ isActive }) =>
+      `font-helvetica font-normal text-[18px] sm:text-[20px] lg:text-[24px] cursor-pointer ${
+        isActive ? 'text-[#2E4A7D]' : 'text-[#4B2C5E]'
+      }`
+    }
+    onClick={() => window.scrollTo(0, 0)}
+  >
+    Mesothelioma
+  </NavLink>
+  <NavLink
+    to="/AboutMain"
+    style={{ textDecoration: 'none' }}
+    className={({ isActive }) =>
+      `font-helvetica font-normal text-[18px] sm:text-[20px] lg:text-[24px] cursor-pointer ${
+        isActive ? 'text-[#2E4A7D]' : 'text-[#4B2C5E]'
+      }`
+    }
+    onClick={() => window.scrollTo(0, 0)}
+  >
+    About us
+  </NavLink>
+</div>
 
-                        {/* Newsletter */}
+                        {/* Newsletter Section */}
                         <div className="flex flex-col space-y-4 mt-6 md:mt-0">
                             <form onSubmit={handleSubscribe} className="w-full max-w-[436px] mx-auto md:mx-0">
                                 <b className="block text-[16px] md:text-[18px] mb-4 font-bold font-['Helvetica'] text-center md:text-left">
-                                    Join our newsletter
+                                    Subscribe to our newsletter
                                 </b>
 
                                 <div className="flex flex-col sm:flex-row">
@@ -132,29 +142,29 @@ const Footer = () => {
 
                     {/* Footer Bottom */}
                     <div className="mt-8 pt-4 border-t border-[#f3e2c8] flex flex-col sm:flex-row items-center justify-between text-[rgba(75,44,94,0.66)]">
-                        <div className="text-center sm:text-left mb-6 sm:mb-0 text-[14px] md:text-[16px]">
-                            <span className="text-[16px] md:text-[18px] font-medium font-['Helvetica'] text-[#c6c3c3] mr-2">©</span>
+                        <div className="text-center sm:text-left mb-4 sm:mb-0 text-[12px] sm:text-[14px]">
+                            <span className="text-[14px] sm:text-[16px] font-medium font-helvetica text-[#c6c3c3] mr-1">©</span>
                             <span>2025.</span>
-                            <span className="ml-2">All rights reserved</span>
+                            <span className="ml-1">All rights reserved</span>
                         </div>
-                        <div>
-                            <div className="flex justify-center space-x-3 md:space-x-6">
-                                <div className="w-[40px] h-[40px] md:w-[61px] md:h-[62px]">
+                        <div className="flex justify-center">
+                            <div className="flex space-x-2 sm:space-x-4">
+                                <div className="w-[30px] h-[30px] sm:w-[40px] sm:h-[40px]">
                                     <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                                         <img className="w-full h-full" alt="Facebook" src={facebook} />
                                     </a>
                                 </div>
-                                <div className="w-[40px] h-[40px] md:w-[61px] md:h-[62px]">
+                                <div className="w-[30px] h-[30px] sm:w-[40px] sm:h-[40px]">
                                     <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
                                         <img className="w-full h-full" alt="Twitter" src={twitter} />
                                     </a>
                                 </div>
-                                <div className="w-[40px] h-[40px] md:w-[61px] md:h-[62px]">
+                                <div className="w-[30px] h-[30px] sm:w-[40px] sm:h-[40px]">
                                     <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
                                         <img className="w-full h-full" alt="LinkedIn" src={linkedin} />
                                     </a>
                                 </div>
-                                <div className="w-[40px] h-[40px] md:w-[61px] md:h-[62px]">
+                                <div className="w-[30px] h-[30px] sm:w-[40px] sm:h-[40px]">
                                     <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                                         <img className="w-full h-full" alt="Instagram" src={instagram} />
                                     </a>

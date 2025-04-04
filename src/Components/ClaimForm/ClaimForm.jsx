@@ -7,7 +7,7 @@ import HomeEight from '../Home-Eight/HomeEight';
 function ClaimForm() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Navbar />
       <ClaimOne />
       <HomeEight />

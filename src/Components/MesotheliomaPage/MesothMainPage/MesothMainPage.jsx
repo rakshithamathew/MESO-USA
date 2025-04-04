@@ -14,7 +14,7 @@ import HomeEight from '../../Home-Eight/HomeEight';
 function MesothMainPage() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Navbar />
       <MesthOne />
       <MesothTwo />

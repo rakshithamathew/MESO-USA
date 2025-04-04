@@ -15,7 +15,7 @@ import CLAIMFORMPage2 from "../../Components/Home-Eight/HomeEight"
 function MesoMain() {
     return (
         <div className='w-auto h-full overflow-hidden'>
-            <Header />
+            {/* <Header /> */}
             <Navbar />
             <MesoOne />
             <Hometwo />

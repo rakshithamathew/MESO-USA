@@ -16,7 +16,7 @@ const AboutUs2 = () => {
         src={Vector2} 
       />
       <i className="z-20 text-center font-bold w-full px-4 sm:w-[90%] md:w-[1117px] text-[24px] sm:text-[32px] md:text-[40px] text-[#2e4a7d]">
-        "Together, we fight for justice, awareness, and a future free from asbestos dangers."
+        Together, we fight for justice, awareness, and a future free from asbestos dangers.
       </i>
     </div>
   );

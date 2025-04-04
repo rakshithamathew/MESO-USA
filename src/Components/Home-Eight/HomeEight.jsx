@@ -4,7 +4,13 @@ import Img2 from '../../assets/meso-eight-img2.svg'
 import Img3 from '../../assets/Frame 112.png'
 import Img4 from '../../assets/Group 35624.png'
 
+import { useNavigate } from 'react-router-dom';
 const HomeEight = () => {
+    const navigate = useNavigate();
+
+    const handleButtonClick = () => {
+      navigate('/ClaimForm');
+    };
     return (
         <div>
             <div className="w-full relative bg-[#faf3ec] h-screen flex items-center justify-center overflow-hidden text-left text-[20px] text-[#4b2c5e] font-helvetica hidden md:block">
@@ -22,7 +28,7 @@ const HomeEight = () => {
                                 <i className="absolute top-[24px] left-[100px] text-[32px] underline tracking-[0.01em] font-['Georgia']">{`Let Us Help to Protect It `}</i> {/* Reduced left value */}
                                 <div className="absolute top-[76px] left-[100px] font-['Helvetica']">Let's take the next step together </div> {/* Reduced left value */}
                                 <div className="absolute top-[calc(50%+19px)] left-[100px] rounded-[20px] bg-[#4b2c5e] h-[71px] overflow-hidden flex flex-row items-center justify-center p-[24px] box-border text-[#f8f2e9]"> {/* Reduced left value */}
-                                    <b className="relative">Call Us Today</b>
+                                    <b className="relative" onClick={handleButtonClick}>Call Us Today</b>
                                 </div>
                             </div>
                             <img className="absolute top-0 left-[60px] w-[220.6px] h-[242px] object-cover" alt="" src={Img2} /> {/* Reduced left value */}
@@ -45,7 +51,7 @@ const HomeEight = () => {
                     {/* Second row with image overlapping card */}
                     <div className="relative w-full max-w-[400px]">
                         <img className="w-full h-full mx-auto mb-[-50px] relative z-10" alt="" src={Img4} />
-                        <div className="absolute ml-[35%] z-10 inline-flex rounded-[12.675px] bg-[#2E4A7D] py-[5px] px-[12px] justify-center items-center gap-[10px] text-[#F5E7DA] font-helvetica text-[14px] font-normal leading-normal">
+                        <div className="absolute ml-[35%] z-10 inline-flex rounded-[12.675px] bg-[#2E4A7D] py-[5px] px-[12px] justify-center items-center gap-[10px] text-[#F5E7DA] font-helvetica text-[14px] font-normal leading-normal" onClick={handleButtonClick}>
                             <b>Call Us Today</b>
                         </div>
                         {/* <div className="rounded-[20px] bg-white w-full p-6 pt-16">

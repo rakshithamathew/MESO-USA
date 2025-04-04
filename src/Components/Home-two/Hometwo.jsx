@@ -1,7 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Vector2 from "../../assets/Vector2.png";
 import Vector1 from "../../assets/Vector1.png";
 import TextField from '@mui/material/TextField';
+import emailjs from '@emailjs/browser';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Button from '@mui/material/Button';
 
 const textFieldStyle = {
   '& .MuiInputLabel-root': {
@@ -43,6 +52,8 @@ const textFieldStyle = {
 };
 
 const Hometwo = () => {
+  const formRef = useRef();
+  
   // State for form fields
   const [formData, setFormData] = useState({
     firstName: '',
@@ -50,6 +61,14 @@ const Hometwo = () => {
     phoneNumber: '',
     emailId: ''
   });
+  
+  // Add state for form errors
+  const [errors, setErrors] = useState({});
+  
+  // State for form submission status
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  // State for success dialog
+  const [successDialogOpen, setSuccessDialogOpen] = useState(false);
 
   // Handle input changes
   const handleChange = (e) => {
@@ -58,17 +77,167 @@ const Hometwo = () => {
       ...prevState,
       [name]: value
     }));
+    
+    // Clear error when user starts typing in the field
+    if (errors[name]) {
+      setErrors(prevErrors => ({
+        ...prevErrors,
+        [name]: ''
+      }));
+    }
+  };
+
+  // Validate form
+  const validateForm = () => {
+    const newErrors = {};
+    
+    // Check for empty fields
+    if (!formData.firstName.trim()) {
+      newErrors.firstName = 'First name is required';
+    } else if (formData.firstName.length < 1) {
+      newErrors.firstName = 'First name must be at least 1 characters';
+    }
+
+    if (!formData.lastName.trim()) {
+      newErrors.lastName = 'Last name is required';
+    } else if (formData.lastName.length < 1) {
+      newErrors.lastName = 'Last name must be at least 1 characters';
+    }
+
+    if (!formData.phoneNumber.trim()) {
+      newErrors.phoneNumber = 'Phone number is required';
+    } else {
+      // Accept formats like: +1 561-555-7689, (561) 555-7689, 561-555-7689, 5615557689
+      const phoneRegex = /^(\+1\s?)?(\(\d{3}\)|\d{3})[\s.-]?\d{3}[\s.-]?\d{4}$/;
+      if (!phoneRegex.test(formData.phoneNumber)) {
+        newErrors.phoneNumber = 'Invalid US phone number format (e.g. +1 561-555-7689)';
+      }
+    }
+    
+    if (!formData.emailId.trim()) {
+      newErrors.emailId = 'Email is required';
+    } else {
+      // Email validation with regex
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.emailId)) {
+        newErrors.emailId = 'Please enter a valid email address';
+      }
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // Handle dialog close
+  const handleCloseDialog = () => {
+    setSuccessDialogOpen(false);
   };
 
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Add your form submission logic here
+    
+    if (!validateForm()) {
+      toast.error('Please correct the errors in the form');
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    // EmailJS service, template and public key configuration
+    const serviceId = 'service_3vbv36o';
+    const templateId = 'template_7xrqzk5';
+    const publicKey = '5saECdElLOrsCGmdQ';
+    
+    // Prepare template parameters to match exactly with EmailJS template variables
+    const templateParams = {
+      from_name: `${formData.firstName} ${formData.lastName}`,
+      email: formData.emailId,
+      phone_number: formData.phoneNumber,
+    };
+
+    // Send email using EmailJS
+    emailjs.send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        console.log('Email sent successfully:', response);
+        // Open success dialog instead of showing toast
+        setSuccessDialogOpen(true);
+        // Reset form data
+        setFormData({
+          firstName: '',
+          lastName: '',
+          phoneNumber: '',
+          emailId: ''
+        });
+        setIsSubmitting(false);
+      })
+      .catch((error) => {
+        console.error('Email sending error:', error);
+        toast.error('Error submitting form. Please try again.');
+        setIsSubmitting(false);
+      });
   };
 
   return (
     <>
+      <ToastContainer position="top-right" />
+      
+      {/* Success Dialog */}
+      <Dialog
+        open={successDialogOpen}
+        onClose={handleCloseDialog}
+        aria-labelledby="home-dialog-title"
+        aria-describedby="home-dialog-description"
+        PaperProps={{
+          style: {
+            borderRadius: '16px',
+            padding: '16px',
+            maxWidth: '550px'
+          }
+        }}
+      >
+        <DialogTitle id="home-dialog-title" sx={{ 
+          fontFamily: 'Georgia', 
+          fontSize: '28px', 
+          color: '#4b2c5e',
+          fontWeight: 'bold',
+          textAlign: 'center',
+          marginTop: '16px'
+        }}>
+          {"Thank You for Reaching Out!"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="home-dialog-description" sx={{ 
+            fontFamily: 'Helvetica', 
+            fontSize: '18px', 
+            color: '#4b2c5e',
+            textAlign: 'center',
+            marginBottom: '16px'
+          }}>
+            {/* <b>Thank You for Reaching Out!</b> <br></br> */}
+            One of our representatives will be in touch with you shortly.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions sx={{ justifyContent: 'center', padding: '16px' }}>
+          <Button 
+            onClick={handleCloseDialog} 
+            sx={{
+              backgroundColor: '#2e4a7d',
+              color: '#f8f2e9',
+              fontFamily: 'Helvetica',
+              fontWeight: 'bold',
+              padding: '8px 24px',
+              borderRadius: '10px',
+              '&:hover': {
+                backgroundColor: '#243c68',
+              },
+            }}
+          >
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
+      
       {/* Desktop Version */}
       <div className="hidden md:block bg-[#FAF3EC] font-georgia m-0 p-0">
         <div className="bg-[#FAF3EC] font-georgia m-0 p-0 ">
@@ -95,16 +264,16 @@ const Hometwo = () => {
             </h1>
             <p className="text-[#4B2C5E] font-helvetica text-[24px] font-normal  w-[660px] h-auto ml-[7%] mt-[6%] text-left">
               You've earned the right to comfort, clarity, and dignity. Whether it's understanding
-              your options or easing the stress,
+              your options or easing the stress
             </p>
           </div>
         </div>
 
         <div className="p-[30px] rounded-[10px] mt-[0.5%] ml-[42%] w-[817px] h-[545px] text-center shadow-[0_4px_8px_rgba(0,0,0,0.1)] rounded-[20px] bg-white">
           <p className="text-[#4B2C5E] font-feature-dlig font-georgia text-[32px] italic font-normal leading-none w-[579px] text-left h-[100px]">
-            <em>We're here to walk beside you every step of the way not just as professionals, but as people who care.</em>
+            <em>We're here to walk beside you every step of the way not just as professionals, but as people who care</em>
           </p>
-          <form onSubmit={handleSubmit}>
+          <form ref={formRef} onSubmit={handleSubmit}>
           <div className="flex mt-16">
             <div className="flex-1 px-4">
               <TextField
@@ -115,6 +284,8 @@ const Hometwo = () => {
                 fullWidth
                 value={formData.firstName}
                 onChange={handleChange}
+                error={!!errors.firstName}
+                helperText={errors.firstName}
                 sx={{
                   ...textFieldStyle,
                   marginBottom: '60px' 
@@ -128,6 +299,9 @@ const Hometwo = () => {
                 fullWidth
                 value={formData.phoneNumber}
                 onChange={handleChange}
+                error={!!errors.phoneNumber}
+                // helperText={errors.phoneNumber || "Format: +1 561-555-7689"}
+                placeholder="+1 XXX-XXX-XXXX"
                 sx={textFieldStyle}
               />
             </div>
@@ -141,6 +315,8 @@ const Hometwo = () => {
                 fullWidth
                 value={formData.lastName}
                 onChange={handleChange}
+                error={!!errors.lastName}
+                helperText={errors.lastName}
                 sx={{
                   ...textFieldStyle,
                   marginBottom: '60px'
@@ -154,15 +330,18 @@ const Hometwo = () => {
                 fullWidth
                 value={formData.emailId}
                 onChange={handleChange}
+                error={!!errors.emailId}
+                helperText={errors.emailId}
                 sx={textFieldStyle}
               />
             </div>
           </div>
           <button 
             type="submit"
+            disabled={isSubmitting}
             className="mt-16 inline-flex h-[71px] px-[24px] justify-center items-center gap-[10px] flex-shrink-0 rounded-[20px] bg-[#2E4A7D] text-[#F8F2E9] font-feature-dlig font-helvetica text-[20px] font-bold leading-normal ml-[-76%] border-none hover:bg-[#374A67]"
           >
-            Begin Here
+            {isSubmitting ? 'Submitting...' : 'Begin Here'}
           </button>
           </form>
         </div>
@@ -193,18 +372,18 @@ const Hometwo = () => {
             <span className="text-[#4B2C5E]/60">Everyday Matters</span>
           </h1>
           <p className="text-[#4B2C5E] font-helvetica text-lg mt-6 px-4 text-center">
-            You've earned the right to comfort, clarity, and dignity. Whether it's understanding
-            your options or easing the stress,
+            You've earned the right to comfort, clarity, and dignity Whether it's understanding
+            your options or easing the stress
           </p>
         </div>
 
         {/* Form container - centered below text with Material UI components */}
         <div className="p-6 rounded-[20px] mt-8 bg-white shadow-md mx-auto max-w-[500px]">
           <p className="text-[#4B2C5E] font-georgia text-xl italic mb-6 text-center">
-            <em>We're here to walk beside you every step of the way not just as professionals, but as people who care.</em>
+            <em>We're here to walk beside you every step of the way not just as professionals, but as people who care</em>
           </p>
           
-          <form onSubmit={handleSubmit} className="">
+          <form ref={formRef} onSubmit={handleSubmit} className="">
             <TextField
               id="firstName-mobile"
               name="firstName"
@@ -213,6 +392,8 @@ const Hometwo = () => {
               fullWidth
               value={formData.firstName}
               onChange={handleChange}
+              error={!!errors.firstName}
+              helperText={errors.firstName}
               sx={{
                 ...textFieldStyle,
                 marginBottom: '24px'
@@ -227,6 +408,8 @@ const Hometwo = () => {
               fullWidth
               value={formData.lastName}
               onChange={handleChange}
+              error={!!errors.lastName}
+              helperText={errors.lastName}
               sx={{
                 ...textFieldStyle,
                 marginBottom: '24px'
@@ -241,6 +424,9 @@ const Hometwo = () => {
               fullWidth
               value={formData.phoneNumber}
               onChange={handleChange}
+              error={!!errors.phoneNumber}
+              // helperText={errors.phoneNumber || "Format: +1 561-555-7689"}
+              placeholder="+1 XXX-XXX-XXXX"
               sx={{
                 ...textFieldStyle,
                 marginBottom: '24px'
@@ -255,14 +441,17 @@ const Hometwo = () => {
               fullWidth
               value={formData.emailId}
               onChange={handleChange}
+              error={!!errors.emailId}
+              helperText={errors.emailId}
               sx={textFieldStyle}
             />
             
             <button 
               type="submit" 
+              disabled={isSubmitting}
               className="w-full py-4 mt-8 rounded-[20px] bg-[#2E4A7D] text-[#F8F2E9] font-helvetica text-lg font-bold hover:bg-[#374A67]"
             >
-              Begin Here
+              {isSubmitting ? 'Submitting...' : 'Begin Here'}
             </button>
           </form>
         </div>
